@@ -1,0 +1,27 @@
+
+#landCoverSliderPanel
+{
+	position:absolute;
+	top:70%;
+	bottom:30%x;
+	left:34%;
+	z-index:10000000;	
+}
+
+#landCoverSlider
+{
+	text-align:center;
+	position:absolute;
+	top:63px;
+	left:99px;	
+	z-index:100000000;
+}
+
+#landCoverSliderBackground
+{
+	
+	background-image:url('../images/LandCoverSliderBackground.png');
+	width:500px;
+	height:200px;
+
+}

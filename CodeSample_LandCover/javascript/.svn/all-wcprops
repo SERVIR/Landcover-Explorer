@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/source/nasa/!svn/ver/216/trunk/web/LandCover/javascript
+END
+MapServiceLoader.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/source/nasa/!svn/ver/216/trunk/web/LandCover/javascript/MapServiceLoader.js
+END
+BaseMapTool.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/source/nasa/!svn/ver/216/trunk/web/LandCover/javascript/BaseMapTool.js
+END
+LayerListTool.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/source/nasa/!svn/ver/223/trunk/web/LandCover/javascript/LayerListTool.js
+END
+IdentifyTool.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/source/nasa/!svn/ver/238/trunk/web/LandCover/javascript/IdentifyTool.js
+END
+LandCoverSliderTool.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/source/nasa/!svn/ver/216/trunk/web/LandCover/javascript/LandCoverSliderTool.js
+END
+init.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/source/nasa/!svn/ver/216/trunk/web/LandCover/javascript/init.js
+END

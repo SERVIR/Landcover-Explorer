@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<head>
+		
+		<title>QA Prototypes</title>
+
+        <!--local styles-->
+        <link href="css/Layout.css" rel="stylesheet" type="text/css" />
+		<link href="css/MapLayers.css" rel="stylesheet" type="text/css" />
+		<link href="css/BaseMapTool.css" rel="stylesheet" type="text/css" />
+		<link href="css/LayerListTool.css" rel="stylesheet" type="text/css" />
+		<link href="css/LandCoverSliderTool.css" rel="stylesheet" type="text/css" />
+		
+		<!--esri styles-->
+        <link rel="stylesheet" type="text/css" href= "http://serverapi.arcgisonline.com/jsapi/arcgis/1.6/js/dojo/dijit/themes/tundra/tundra.css"/>	
+		
+		<!--dojo configuration-->
+		<script type="text/javascript">djConfig = { parseOnLoad: true }</script>
+		
+		<!--esri javascript-->
+        <script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=1.6"></script>
+        
+        <!--local javascript-->
+		<script src="javascript/BaseMapTool.js" type="text/javascript"></script>
+		<script src="javascript/LayerListTool.js" type="text/javascript"></script>
+		<script src="javascript/IdentifyTool.js" type="text/javascript"></script>
+		<script src="javascript/LandCoverSliderTool.js" type="text/javascript"></script>
+		<script src="javascript/MapServiceLoader.js" type="text/javascript"></script>
+		<script src="javascript/init.js" type="text/javascript"></script>
+
+	</head>
+	
+	<body class="tundra" onresize="resizeMap();">
+
+        <!--
+        	PAGE LAYOUT
+        -->
+	
+
+			
+		<div id="headerTitle">
+			<!-- header text -->
+		</div>
+		
+		<div id="header">
+		    <img id="headerLogo" src="images/servir_logo.png" alt="servir_logo"/>
+		    <div id="headerTitle">Reference Node | Land Cover</div>
+		</div>
+		
+		<div id="mapToolbar">
+			 
+			 <a id="mapLayers" href="#" onmouseover="document.mapLayers.src='images/mapLayers_Blue_Hover.png';" onmouseout="document.mapLayers.src='images/mapLayers_Blue_Default.png';" onmousedown="document.mapLayers.src='images/mapLayers_Blue_MouseDown.png';" onclick="LayerListTool.openLayerListDialog('layerListDialog');"> 
+                <img src="images/mapLayers_Blue_Default.png" alt="maplayers" name="mapLayers"/> 
+             </a>			
+             
+             <a id="baseMapToolButton" href="#" onmouseover="document.baseLayers.src='images/baseMapTool_Blue_Hover.png';" onmouseout="document.baseLayers.src='images/baseMapTool_Blue_Default.png';" onmousedown="document.baseLayers.src='images/baseMapTool_Blue_MouseDown.png';" onclick="BaseMapTool.wipeInBaseMapPanel('baseMapToolPanel');"> 
+                <img src="images/baseMapTool_Blue_Default.png" alt="basemaptool" name="baseLayers"/> 
+             </a> 
+		</div>
+		
+		<div id="mapContainer">
+
+		    <div id="map" class="shadow"></div>
+
+		</div>
+
+        
+		<div id="footer">
+		    <span style="position: absolute; top:5px; right:10px;">&#169; 2012 SERVIR Reference Node Prototype.&nbsp;&nbsp;All rights reserved.</span>
+		</div>
+	    
+		<!--
+			MAP TOOLS
+		-->
+
+		<!-- BASE MAP TOOL -->
+		<div id="baseMapToolPanel" style="display:none;">
+			<table>
+				<tr>
+					<td>
+						<img id="baseMapAerial" src="images/baseMap_Imagery_Default.png" name="baseMapAerial" alt="baseMapAerial" onmouseover="document.baseMapAerial.src='images/baseMap_Imagery_Hover.png';" onmouseout="document.baseMapAerial.src='images/baseMap_Imagery_Default.png';" onclick="BaseMapTool.toggleBaseMapService(MAP, MAPLAYERS.baseLayers, this.id);" /><br /><br />
+					</td>
+					<td>
+						<img id="baseMapStreets" src="images/baseMap_Streets_Default.png" name="baseMapStreets" alt="baseMapStreets" onmouseover="document.baseMapStreets.src='images/baseMap_Streets_Hover.png';" onmouseout="document.baseMapStreets.src='images/baseMap_Streets_Default.png';" onclick="BaseMapTool.toggleBaseMapService(MAP, MAPLAYERS.baseLayers, this.id);" /><br /><br />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img id="baseMapTopo" src="images/baseMap_Topographic_Default.png" name="baseMapTopo" alt="baseMapTopo" onmouseover="document.baseMapTopo.src='images/baseMap_Topographic_Hover.png';" onmouseout="document.baseMapTopo.src='images/baseMap_Topographic_Default.png';" onclick="BaseMapTool.toggleBaseMapService(MAP, MAPLAYERS.baseLayers, this.id);" /><br /><br />
+					</td>
+					<td>
+						<img id="baseMapTerrain" src="images/baseMap_Terrain_Default.png" name="baseMapTerrain" alt="baseMapTerrain" onmouseover="document.baseMapTerrain.src='images/baseMap_Terrain_Hover.png';" onmouseout="document.baseMapTerrain.src='images/baseMap_Terrain_Default.png';" onclick="BaseMapTool.toggleBaseMapService(MAP, MAPLAYERS.baseLayers, this.id);" /><br /><br />
+					</td>
+				</tr>
+			</table>
+		</div>
+	
+		<!-- LAYER LIST TOOL -->
+		<div id="layerListDialog" dojotype="dijit.Dialog" title="Layers">
+			Land Cover Classes (Type 1 IGBP)
+			<br/>
+			<div id="legendPlaceholder"></div>
+		</div>
+		
+		<!-- LAND COVER TIME SLIDER -->
+
+		<div id="landCoverSliderPanel">
+			<div id="landCoverSlider">
+				<span style="color:white;">Select Land Cover Year</span>
+				<br/><br/>
+				<div dojoType="dijit.form.HorizontalSlider" name="horizontal1"
+					onChange="LandCoverSliderTool.changeLandCoverMapService(arguments[0]);"
+					value="2001"
+					maximum="2009"
+					minimum="2001"
+					discreteValues="9"
+					pageIncrement="1"
+					showButtons="false"
+					intermediateChanges="false"
+					style="width:300px; height: 20px;"
+					id="slider1">
+				  	<div dojoType="dijit.form.HorizontalRule" container="bottomDecoration" count=9 style="height:5px;color:white;"></div>
+				  	<div dojoType="dijit.form.HorizontalRule" container="topDecoration" count=9 style="height:5px;color:white;"></div>
+				  	<ol dojoType="dijit.form.HorizontalRuleLabels" container="bottomDecoration" style="height:1em;font-size:75%;color:white;">
+					    <li>2001</li>
+					    <li>2002</li>
+					    <li>2003</li>
+					    <li>2004</li>
+					    <li>2005</li>
+					    <li>2006</li>
+					    <li>2007</li>
+					    <li>2008</li>
+					    <li>2009</li>
+					  </ol>
+				</div>
+			</div>	
+			<div id="landCoverSliderBackground"></div>
+		</div>
+		
+	</body>
+</html>
