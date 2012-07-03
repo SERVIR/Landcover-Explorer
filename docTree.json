@@ -1,0 +1,93 @@
+{
+    "identifier": "name",
+    "label": "name",
+    "items": [
+        {
+            "name": "Rootless",
+            "children": [
+                {
+                    "name": "Exploring Reference and Regional GIS Services", 
+                    "children":[
+                    	{
+                    		"name":"Exploring global Reference Node GIS Services",
+                    		"url":"devDocs/doc0.html"
+                    	}, 
+                    	{
+                    		"name":"Exploring regional GIS Services for Mesoamerica",
+                    		"url":"devDocs/doc1.html"
+                    	}, 
+                    	{
+                    		"name":"Exploring regional GIS Services for East Africa",
+                    		"url":"devDocs/doc2.html"
+                    	},
+                    	{
+                    		"name":"Exploring regional GIS Services for Himalaya",
+                    		"url":"devDocs/docplaceholder.html"
+                    	}
+                    ]
+                },
+                {
+                    "name": "Sample Apps using Reference Node GIS Services", 
+                    "children":[
+                    	 
+                    	{
+                    		"name":"Visualizing Land Cover Classes over Time",
+                    		"url":"devDocs/doc3.html"
+                    	},  
+                    	{
+                    		"name":"Making an Interactive World Soils map",
+                    		"url":"devDocs/doc4.html"
+                    	},
+                    	{
+                    		"name":"Visualizing and querying time-enabled TRMM data",
+                    		"url":"devDocs/docplaceholder.html"
+                    	},
+                    	{
+                    		"name":"Visualizing time-enabled fire events",
+                    		"url":"devDocs/docplaceholder.html"
+                    	}
+                    ]
+                },
+                {
+                    "name": "Using NASA-SERVIR GIS Services with the Esri JavaScript API", 
+                    "children":[
+                    	{
+                    		"name":"Using high performance NASA-SERVIR cached GIS Services"
+                    	}, 
+                    	{
+                    		"name":"Adding support for printing your web maps"
+                    	}, 
+                    	{
+                    		"name":"Easily add a base map gallery to your web map"
+                    	}, 
+                    	{
+                    		"name":"Working with NASA-SERVIR GIS Service legends"
+                    	}
+                    ]
+                },
+                {
+                    "name": "Using NASA-SERVIR GIS Services with Open Source Map Viewers", 
+                    "children":[
+                    	{
+                    		"name":"Adding NASA-SERVIR GIS Services to your Leaflet web map"
+                    	}, 
+                    	{
+                    		"name":"Adding NASA-SERVIR GIS Services to your OpenLayers web map"
+                    	}
+                    ]
+                },
+                {
+                    "name": "Using NASA-SERVIR GIS Services with Google Maps", 
+                    "children":[
+                    	{
+                    		"name":"Adding NASA-SERVIR GIS WMS Services to GoogleMap"
+                    	},
+                    	{
+                    		"name":"Acquiring marker data from the NASA-SERVIR REST API"
+                    	}
+                    ]
+                }
+            ]
+        }
+    ]
+}
