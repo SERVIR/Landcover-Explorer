@@ -1,7 +1,7 @@
 
 //configure identify tool
 var LAYERLIST_OPACITYID = "hwsdSoils";
-var MAPSERVICE_URL_FOR_LAYER_LIST = "http://50.17.249.169/ArcGIS/rest/services/ReferenceNode/MODIS_Landcover_Type1_2001/MapServer";
+var MAPSERVICE_URL_FOR_LAYER_LIST = THIS URL SHOULD POINT TO THE MAP SERVICE ENDPOINT;
 var MAPSERVICE_LAYERID_FORLEGEND = "0";
 
 dojo.require("dijit.Dialog");
